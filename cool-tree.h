@@ -683,3 +683,305 @@ public:
    neg_EXTRAS
 #endif
 };
+
+
+// define constructor - lt
+class lt_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   lt_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef lt_EXTRAS
+   lt_EXTRAS
+#endif
+};
+
+
+// define constructor - eq
+class eq_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   eq_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef eq_EXTRAS
+   eq_EXTRAS
+#endif
+};
+
+
+// define constructor - leq
+class leq_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   leq_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef leq_EXTRAS
+   leq_EXTRAS
+#endif
+};
+
+
+// define constructor - comp
+class comp_class : public Expression_class {
+protected:
+   Expression e1;
+public:
+   comp_class(Expression a1) {
+      e1 = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef comp_EXTRAS
+   comp_EXTRAS
+#endif
+};
+
+
+// define constructor - int_const
+class int_const_class : public Expression_class {
+protected:
+   Symbol token;
+public:
+   int_const_class(Symbol a1) {
+      token = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef int_const_EXTRAS
+   int_const_EXTRAS
+#endif
+};
+
+
+// define constructor - bool_const
+class bool_const_class : public Expression_class {
+protected:
+   Boolean val;
+public:
+   bool_const_class(Boolean a1) {
+      val = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef bool_const_EXTRAS
+   bool_const_EXTRAS
+#endif
+};
+
+
+// define constructor - string_const
+class string_const_class : public Expression_class {
+protected:
+   Symbol token;
+public:
+   string_const_class(Symbol a1) {
+      token = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef string_const_EXTRAS
+   string_const_EXTRAS
+#endif
+};
+
+
+// define constructor - new_
+class new__class : public Expression_class {
+protected:
+   Symbol type_name;
+public:
+   new__class(Symbol a1) {
+      type_name = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef new__EXTRAS
+   new__EXTRAS
+#endif
+};
+
+
+// define constructor - isvoid
+class isvoid_class : public Expression_class {
+protected:
+   Expression e1;
+public:
+   isvoid_class(Expression a1) {
+      e1 = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef isvoid_EXTRAS
+   isvoid_EXTRAS
+#endif
+};
+
+
+// define constructor - no_expr
+class no_expr_class : public Expression_class {
+protected:
+public:
+   no_expr_class() {
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   bool is_no_expr() const
+   {
+	   return true;
+   }
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef no_expr_EXTRAS
+   no_expr_EXTRAS
+#endif
+};
+
+
+// define constructor - object
+class object_class : public Expression_class {
+protected:
+   Symbol name;
+public:
+   object_class(Symbol a1) {
+      name = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef object_EXTRAS
+   object_EXTRAS
+#endif
+};
+
+
+// define the prototypes of the interface
+Classes nil_Classes();
+Classes single_Classes(Class_);
+Classes append_Classes(Classes, Classes);
+Features nil_Features();
+Features single_Features(Feature);
+Features append_Features(Features, Features);
+Formals nil_Formals();
+Formals single_Formals(Formal);
+Formals append_Formals(Formals, Formals);
+Expressions nil_Expressions();
+Expressions single_Expressions(Expression);
+Expressions append_Expressions(Expressions, Expressions);
+Cases nil_Cases();
+Cases single_Cases(Case);
+Cases append_Cases(Cases, Cases);
+Program program(Classes);
+Class_ class_(Symbol, Symbol, Features, Symbol);
+Feature method(Symbol, Formals, Symbol, Expression);
+Feature attr(Symbol, Symbol, Expression);
+Formal formal(Symbol, Symbol);
+Case branch(Symbol, Symbol, Expression);
+Expression assign(Symbol, Expression);
+Expression static_dispatch(Expression, Symbol, Symbol, Expressions);
+Expression dispatch(Expression, Symbol, Expressions);
+Expression cond(Expression, Expression, Expression);
+Expression loop(Expression, Expression);
+Expression typcase(Expression, Cases);
+Expression block(Expressions);
+Expression let(Symbol, Symbol, Expression, Expression);
+Expression plus(Expression, Expression);
+Expression sub(Expression, Expression);
+Expression mul(Expression, Expression);
+Expression divide(Expression, Expression);
+Expression neg(Expression);
+Expression lt(Expression, Expression);
+Expression eq(Expression, Expression);
+Expression leq(Expression, Expression);
+Expression comp(Expression);
+Expression int_const(Symbol);
+Expression bool_const(Boolean);
+Expression string_const(Symbol);
+Expression new_(Symbol);
+Expression isvoid(Expression);
+Expression no_expr();
+Expression object(Symbol);
+
+
+#endif
