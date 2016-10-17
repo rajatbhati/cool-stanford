@@ -416,3 +416,270 @@ public:
 #endif
 };
 
+
+// define constructor - dispatch
+class dispatch_class : public Expression_class {
+protected:
+   Expression expr;
+   Symbol name;
+   Expressions actual;
+public:
+   dispatch_class(Expression a1, Symbol a2, Expressions a3) {
+      expr = a1;
+      name = a2;
+      actual = a3;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef dispatch_EXTRAS
+   dispatch_EXTRAS
+#endif
+};
+
+
+// define constructor - cond
+class cond_class : public Expression_class {
+protected:
+   Expression pred;
+   Expression then_exp;
+   Expression else_exp;
+public:
+   cond_class(Expression a1, Expression a2, Expression a3) {
+      pred = a1;
+      then_exp = a2;
+      else_exp = a3;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef cond_EXTRAS
+   cond_EXTRAS
+#endif
+};
+
+
+// define constructor - loop
+class loop_class : public Expression_class {
+protected:
+   Expression pred;
+   Expression body;
+public:
+   loop_class(Expression a1, Expression a2) {
+      pred = a1;
+      body = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef loop_EXTRAS
+   loop_EXTRAS
+#endif
+};
+
+
+// define constructor - typcase
+class typcase_class : public Expression_class {
+protected:
+   Expression expr;
+   Cases cases;
+public:
+   typcase_class(Expression a1, Cases a2) {
+      expr = a1;
+      cases = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef typcase_EXTRAS
+   typcase_EXTRAS
+#endif
+};
+
+
+// define constructor - block
+class block_class : public Expression_class {
+protected:
+   Expressions body;
+public:
+   block_class(Expressions a1) {
+      body = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef block_EXTRAS
+   block_EXTRAS
+#endif
+};
+
+
+// define constructor - let
+class let_class : public Expression_class {
+protected:
+   Symbol identifier;
+   Symbol type_decl;
+   Expression init;
+   Expression body;
+public:
+   let_class(Symbol a1, Symbol a2, Expression a3, Expression a4) {
+      identifier = a1;
+      type_decl = a2;
+      init = a3;
+      body = a4;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef let_EXTRAS
+   let_EXTRAS
+#endif
+};
+
+
+// define constructor - plus
+class plus_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   plus_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef plus_EXTRAS
+   plus_EXTRAS
+#endif
+};
+
+
+// define constructor - sub
+class sub_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   sub_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef sub_EXTRAS
+   sub_EXTRAS
+#endif
+};
+
+
+// define constructor - mul
+class mul_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   mul_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef mul_EXTRAS
+   mul_EXTRAS
+#endif
+};
+
+
+// define constructor - divide
+class divide_class : public Expression_class {
+protected:
+   Expression e1;
+   Expression e2;
+public:
+   divide_class(Expression a1, Expression a2) {
+      e1 = a1;
+      e2 = a2;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef divide_EXTRAS
+   divide_EXTRAS
+#endif
+};
+
+
+// define constructor - neg
+class neg_class : public Expression_class {
+protected:
+   Expression e1;
+public:
+   neg_class(Expression a1) {
+      e1 = a1;
+   }
+   Expression copy_Expression();
+   void dump(ostream& stream, int n);
+
+   Type do_Check_Expr_Type();
+
+#ifdef Expression_SHARED_EXTRAS
+   Expression_SHARED_EXTRAS
+#endif
+#ifdef neg_EXTRAS
+   neg_EXTRAS
+#endif
+};
