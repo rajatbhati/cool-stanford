@@ -1,4 +1,4 @@
-# cool-stanford
+# COOL-stanford
 ## Intro:
 This project is a part of the assignments required to complete the COMPILERS course by stanford. COOL - Classroom Object Oriented Language is cretaed for the purpose of teaching students to create Compilers .
 
