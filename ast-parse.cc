@@ -115,3 +115,126 @@ int omerrs = 0;               /* number of errors in lexing and parsing */
 #ifndef YYTOKEN_TABLE
 # define YYTOKEN_TABLE 0
 #endif
+
+
+/* Tokens.  */
+#ifndef YYTOKENTYPE
+# define YYTOKENTYPE
+   /* Put the tokens into the symbol table, so that GDB and other debuggers
+      know about them.  */
+   enum yytokentype {
+     PROGRAM = 258,
+     CLASS = 259,
+     METHOD = 260,
+     ATTR = 261,
+     FORMAL = 262,
+     BRANCH = 263,
+     ASSIGN = 264,
+     STATIC_DISPATCH = 265,
+     DISPATCH = 266,
+     COND = 267,
+     LOOP = 268,
+     TYPCASE = 269,
+     BLOCK = 270,
+     LET = 271,
+     PLUS = 272,
+     SUB = 273,
+     MUL = 274,
+     DIVIDE = 275,
+     NEG = 276,
+     LT = 277,
+     EQ = 278,
+     LEQ = 279,
+     COMP = 280,
+     INT = 281,
+     STR = 282,
+     BOOL = 283,
+     NEW = 284,
+     ISVOID = 285,
+     NO_EXPR = 286,
+     OBJECT = 287,
+     NO_TYPE = 288,
+     STR_CONST = 289,
+     INT_CONST = 290,
+     ID = 291,
+     LINENO = 292
+   };
+#endif
+/* Tokens.  */
+#define PROGRAM 258
+#define CLASS 259
+#define METHOD 260
+#define ATTR 261
+#define FORMAL 262
+#define BRANCH 263
+#define ASSIGN 264
+#define STATIC_DISPATCH 265
+#define DISPATCH 266
+#define COND 267
+#define LOOP 268
+#define TYPCASE 269
+#define BLOCK 270
+#define LET 271
+#define PLUS 272
+#define SUB 273
+#define MUL 274
+#define DIVIDE 275
+#define NEG 276
+#define LT 277
+#define EQ 278
+#define LEQ 279
+#define COMP 280
+#define INT 281
+#define STR 282
+#define BOOL 283
+#define NEW 284
+#define ISVOID 285
+#define NO_EXPR 286
+#define OBJECT 287
+#define NO_TYPE 288
+#define STR_CONST 289
+#define INT_CONST 290
+#define ID 291
+#define LINENO 292
+
+
+
+
+#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+typedef union YYSTYPE
+{
+
+/* Line 214 of yacc.c  */
+#line 25 "ast.y"
+
+  int lineno;
+  Boolean boolean;
+  Symbol symbol;
+  Program program;
+  Class_ class_;
+  Classes classes;
+  Feature feature;
+  Features features;
+  Formal formal;
+  Formals formals;
+  Case case_;
+  Cases cases;
+  Expression expression;
+  Expressions expressions;
+
+
+
+/* Line 214 of yacc.c  */
+#line 229 "ast.tab.c"
+} YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
+# define yystype YYSTYPE /* obsolescent; will be withdrawn */
+# define YYSTYPE_IS_DECLARED 1
+#endif
+
+
+/* Copy the second part of user declarations.  */
+
+
+/* Line 264 of yacc.c  */
+
