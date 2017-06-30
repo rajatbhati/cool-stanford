@@ -556,3 +556,314 @@ static const yytype_uint8 yyrline[] =
      235
 };
 #endif
+
+#if YYDEBUG || YYERROR_VERBOSE || YYTOKEN_TABLE
+/* YYTNAME[SYMBOL-NUM] -- String name of the symbol SYMBOL-NUM.
+   First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
+static const char *const yytname[] =
+{
+  "$end", "error", "$undefined", "PROGRAM", "CLASS", "METHOD", "ATTR",
+  "FORMAL", "BRANCH", "ASSIGN", "STATIC_DISPATCH", "DISPATCH", "COND",
+  "LOOP", "TYPCASE", "BLOCK", "LET", "PLUS", "SUB", "MUL", "DIVIDE", "NEG",
+  "LT", "EQ", "LEQ", "COMP", "INT", "STR", "BOOL", "NEW", "ISVOID",
+  "NO_EXPR", "OBJECT", "NO_TYPE", "STR_CONST", "INT_CONST", "ID", "LINENO",
+  "'('", "')'", "':'", "$accept", "program", "class_list", "class",
+  "optional_feature_list", "feature_list", "feature", "formals",
+  "formal_list", "formal", "expr", "expr_aux", "actuals", "expr_list",
+  "case_list", "simple_case", 0
+};
+#endif
+
+# ifdef YYPRINT
+/* YYTOKNUM[YYLEX-NUM] -- Internal token number corresponding to
+   token YYLEX-NUM.  */
+static const yytype_uint16 yytoknum[] =
+{
+       0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
+     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
+     275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
+     285,   286,   287,   288,   289,   290,   291,   292,    40,    41,
+      58
+};
+# endif
+
+/* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
+static const yytype_uint8 yyr1[] =
+{
+       0,    41,    42,    42,    43,    43,    44,    45,    45,    46,
+      46,    47,    47,    48,    48,    49,    49,    50,    51,    51,
+      52,    52,    52,    52,    52,    52,    52,    52,    52,    52,
+      52,    52,    52,    52,    52,    52,    52,    52,    52,    52,
+      52,    52,    52,    52,    53,    53,    54,    54,    55,    55,
+      56
+};
+
+/* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
+static const yytype_uint8 yyr2[] =
+{
+       0,     2,     3,     0,     1,     2,     8,     0,     1,     1,
+       2,     6,     5,     0,     1,     1,     2,     4,     3,     3,
+       4,     6,     5,     5,     4,     3,     6,     4,     3,     3,
+       4,     4,     4,     4,     3,     4,     4,     4,     3,     3,
+       3,     3,     3,     2,     2,     3,     1,     2,     1,     2,
+       5
+};
+
+/* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
+   STATE-NUM when YYTABLE doesn't specify something else to do.  Zero
+   means the default is an error.  */
+static const yytype_uint8 yydefact[] =
+{
+       3,     0,     0,     0,     1,     0,     2,     4,     0,     5,
+       0,     0,     0,     7,     0,     0,     8,     9,     0,     0,
+       6,    10,    13,     0,     0,     0,    14,    15,     0,     0,
+       0,    16,     0,    12,     0,     0,    11,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,    43,
+       0,     0,    17,     0,     0,     0,     0,     0,     0,    46,
+      25,     0,     0,     0,     0,     0,    34,     0,     0,     0,
+      38,    39,    40,    41,    28,    29,    42,    19,    18,    20,
+       0,     0,     0,    24,     0,    27,    48,    47,     0,    30,
+      31,    32,    33,    35,    36,    37,     0,     0,    22,    23,
+       0,    49,     0,    21,    44,     0,     0,    26,    45,     0,
+      50
+};
+
+/* YYDEFGOTO[NTERM-NUM].  */
+static const yytype_int8 yydefgoto[] =
+{
+      -1,     2,     6,     7,    15,    16,    17,    25,    26,    27,
+      69,    34,   108,    70,    95,    96
+};
+
+/* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
+   STATE-NUM.  */
+#define YYPACT_NINF -35
+static const yytype_int8 yypact[] =
+{
+     -30,     6,    26,   -10,   -35,    24,   -10,   -35,    -7,   -35,
+      -5,    -2,    -4,    -1,    10,    -6,    -1,   -35,     1,     4,
+     -35,   -35,    11,     5,    36,    16,    11,   -35,    17,    19,
+      17,   -35,    83,   -35,    13,    20,   -35,    21,    17,    17,
+      17,    17,    17,    17,    22,    17,    17,    17,    17,    17,
+      17,    17,    17,    17,    25,    27,    28,    23,    17,   -35,
+      29,   -32,   -35,    17,    30,    31,    17,    17,    32,   -35,
+      17,    35,    17,    17,    17,    17,   -35,    17,    17,    17,
+     -35,   -35,   -35,   -35,   -35,   -35,   -35,   -35,   -35,   -35,
+      37,    34,    17,   -35,    54,    32,   -35,   -35,    17,   -35,
+     -35,   -35,   -35,   -35,   -35,   -35,    34,   -34,   -35,   -35,
+      38,   -35,    17,   -35,   -35,   -31,    39,   -35,   -35,    17,
+     -35
+};
+
+/* YYPGOTO[NTERM-NUM].  */
+static const yytype_int8 yypgoto[] =
+{
+     -35,   -35,   -35,    62,   -35,   -35,    60,   -35,   -35,    51,
+     -28,   -35,   -27,   -29,   -35,   -15
+};
+
+/* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
+   positive, shift that token.  If negative, reduce the rule which
+   number is the opposite.  If zero, do what YYDEFACT says.
+   If YYTABLE_NINF, syntax error.  */
+#define YYTABLE_NINF -1
+static const yytype_uint8 yytable[] =
+{
+      33,    87,    36,    32,    88,   114,    32,     1,   118,     3,
+      64,    65,    66,    67,    68,    18,    19,    72,    73,    74,
+      75,    76,    77,    78,    79,    80,     4,     5,     8,    10,
+      85,    11,    12,    20,    13,    89,    14,    22,    92,    93,
+      23,    28,    97,    29,    99,   100,   101,   102,    24,   103,
+     104,   105,    30,    61,    32,    35,    62,    63,    71,    84,
+      81,    82,   110,    83,   109,    86,    90,    91,     9,    94,
+     112,    98,   107,   106,   116,   119,    21,    31,   115,   113,
+     111,     0,     0,     0,   117,     0,     0,    97,     0,     0,
+       0,   120,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
+      55,    56,    57,    58,    59,    60
+};
+
+static const yytype_int8 yycheck[] =
+{
+      28,    33,    30,    37,    36,    39,    37,    37,    39,     3,
+      38,    39,    40,    41,    42,     5,     6,    45,    46,    47,
+      48,    49,    50,    51,    52,    53,     0,    37,     4,    36,
+      58,    36,    34,    39,    38,    63,    37,    36,    66,    67,
+      36,    36,    70,     7,    72,    73,    74,    75,    37,    77,
+      78,    79,    36,    40,    37,    36,    36,    36,    36,    36,
+      35,    34,     8,    35,    92,    36,    36,    36,     6,    37,
+      98,    36,    38,    36,    36,    36,    16,    26,   107,   106,
+      95,    -1,    -1,    -1,   112,    -1,    -1,   115,    -1,    -1,
+      -1,   119,     9,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,    19,    20,    21,    22,    23,    24,    25,    26,
+      27,    28,    29,    30,    31,    32
+};
+
+/* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
+   symbol of state STATE-NUM.  */
+static const yytype_uint8 yystos[] =
+{
+       0,    37,    42,     3,     0,    37,    43,    44,     4,    44,
+      36,    36,    34,    38,    37,    45,    46,    47,     5,     6,
+      39,    47,    36,    36,    37,    48,    49,    50,    36,     7,
+      36,    50,    37,    51,    52,    36,    51,     9,    10,    11,
+      12,    13,    14,    15,    16,    17,    18,    19,    20,    21,
+      22,    23,    24,    25,    26,    27,    28,    29,    30,    31,
+      32,    40,    36,    36,    51,    51,    51,    51,    51,    51,
+      54,    36,    51,    51,    51,    51,    51,    51,    51,    51,
+      51,    35,    34,    35,    36,    51,    36,    33,    36,    51,
+      36,    36,    51,    51,    37,    55,    56,    51,    36,    51,
+      51,    51,    51,    51,    51,    51,    36,    38,    53,    51,
+       8,    56,    51,    53,    39,    54,    36,    51,    39,    36,
+      51
+};
+
+#define yyerrok      (yyerrstatus = 0)
+#define yyclearin (yychar = YYEMPTY)
+#define YYEMPTY      (-2)
+#define YYEOF     0
+
+#define YYACCEPT  goto yyacceptlab
+#define YYABORT      goto yyabortlab
+#define YYERROR      goto yyerrorlab
+
+
+/* Like YYERROR except do call yyerror.  This remains here temporarily
+   to ease the transition to the new meaning of YYERROR, for GCC.
+   Once GCC version 2 has supplanted version 1, this can go.  */
+
+#define YYFAIL    goto yyerrlab
+
+#define YYRECOVERING()  (!!yyerrstatus)
+
+#define YYBACKUP(Token, Value)               \
+do                      \
+  if (yychar == YYEMPTY && yylen == 1)          \
+    {                      \
+      yychar = (Token);                \
+      yylval = (Value);                \
+      yytoken = YYTRANSLATE (yychar);           \
+      YYPOPSTACK (1);                  \
+      goto yybackup;                \
+    }                      \
+  else                        \
+    {                      \
+      yyerror (YY_("syntax error: cannot back up")); \
+      YYERROR;                   \
+    }                      \
+while (YYID (0))
+
+
+#define YYTERROR  1
+#define YYERRCODE 256
+
+
+/* YYLLOC_DEFAULT -- Set CURRENT to span from RHS[1] to RHS[N].
+   If N is 0, then set CURRENT to the empty location which ends
+   the previous symbol: RHS[0] (always defined).  */
+
+#define YYRHSLOC(Rhs, K) ((Rhs)[K])
+#ifndef YYLLOC_DEFAULT
+# define YYLLOC_DEFAULT(Current, Rhs, N)           \
+    do                           \
+      if (YYID (N))                                                    \
+   {                       \
+     (Current).first_line   = YYRHSLOC (Rhs, 1).first_line; \
+     (Current).first_column = YYRHSLOC (Rhs, 1).first_column;  \
+     (Current).last_line    = YYRHSLOC (Rhs, N).last_line;     \
+     (Current).last_column  = YYRHSLOC (Rhs, N).last_column;   \
+   }                       \
+      else                       \
+   {                       \
+     (Current).first_line   = (Current).last_line   =    \
+       YYRHSLOC (Rhs, 0).last_line;          \
+     (Current).first_column = (Current).last_column =    \
+       YYRHSLOC (Rhs, 0).last_column;           \
+   }                       \
+    while (YYID (0))
+#endif
+
+
+/* YY_LOCATION_PRINT -- Print the location on the stream.
+   This macro was not mandated originally: define only if we know
+   we won't break user code: when these are the locations we know.  */
+
+#ifndef YY_LOCATION_PRINT
+# if YYLTYPE_IS_TRIVIAL
+#  define YY_LOCATION_PRINT(File, Loc)       \
+     fprintf (File, "%d.%d-%d.%d",        \
+         (Loc).first_line, (Loc).first_column,  \
+         (Loc).last_line,  (Loc).last_column)
+# else
+#  define YY_LOCATION_PRINT(File, Loc) ((void) 0)
+# endif
+#endif
+
+
+/* YYLEX -- calling `yylex' with the right arguments.  */
+
+#ifdef YYLEX_PARAM
+# define YYLEX yylex (YYLEX_PARAM)
+#else
+# define YYLEX yylex ()
+#endif
+
+/* Enable debugging if requested.  */
+#if YYDEBUG
+
+# ifndef YYFPRINTF
+#  include <stdio.h> /* INFRINGES ON USER NAME SPACE */
+#  define YYFPRINTF fprintf
+# endif
+
+# define YYDPRINTF(Args)         \
+do {                 \
+  if (yydebug)             \
+    YYFPRINTF Args;           \
+} while (YYID (0))
+
+# define YY_SYMBOL_PRINT(Title, Type, Value, Location)           \
+do {                            \
+  if (yydebug)                        \
+    {                           \
+      YYFPRINTF (stderr, "%s ", Title);                 \
+      yy_symbol_print (stderr,                    \
+        Type, Value); \
+      YYFPRINTF (stderr, "\n");                   \
+    }                           \
+} while (YYID (0))
+
+
+/*--------------------------------.
+| Print this symbol on YYOUTPUT.  |
+`--------------------------------*/
+
+/*ARGSUSED*/
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+static void
+yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+#else
+static void
+yy_symbol_value_print (yyoutput, yytype, yyvaluep)
+    FILE *yyoutput;
+    int yytype;
+    YYSTYPE const * const yyvaluep;
+#endif
+{
+  if (!yyvaluep)
+    return;
+# ifdef YYPRINT
+  if (yytype < YYNTOKENS)
+    YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
+# else
+  YYUSE (yyoutput);
+# endif
+  switch (yytype)
+    {
+      default:
+   break;
+    }
+}
+
