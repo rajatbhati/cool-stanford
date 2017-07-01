@@ -2093,7 +2093,6 @@ yyreturn:
 
 
 
-/* Line 1675 of yacc.c  */
 #line 241 "ast.y"
 
 
@@ -2102,4 +2101,5 @@ void ast_yyerror(char *)
    cerr << "??? unexpected error in ast parsing." << endl;
    exit(1);
 }
+
 
